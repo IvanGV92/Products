@@ -1,6 +1,7 @@
 import React from 'react';
 import RenderCard  from './RenderCardComponent';
-import { baseUrl } from '../shared/baseUrl';
+
+import { FadeTransform } from 'react-animation-components';
 
 function Home(props){
     return(
