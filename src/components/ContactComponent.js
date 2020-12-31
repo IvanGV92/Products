@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import { Breadcrumb, BreadcrumbItem, Button, Label, Col, Row } from 'reactstrap';
 import { Link } from 'react-router-dom';
-import { Control, Form, Errors, actions } from 'react-redux-form';
+import { Control, Form, Errors } from 'react-redux-form';
 
 const required = (val) => val && val.length;
 const maxLength = (len) => (val) => !(val) || (val.length <= len);
@@ -24,6 +24,7 @@ class Contact extends Component {
     handleSubmit(values) {
         console.log("Current state is:"+JSON.stringify(values));
         alert("Current state is:"+JSON.stringify(values));
+        this.props.postFeedback(values);
         this.props.resetFeedbackForm();
         
         
@@ -68,6 +69,7 @@ class Contact extends Component {
                     <div className="col-12 col-sm-11 offset-sm-1">
                         <div className="btn-group" role="group">
                             <a role="button" className="btn btn-primary" href="tel:+85212345678"><i className="fa fa-phone"></i> Call</a>
+                             {/* eslint-disable-next-line */}
                             <a role="button" className="btn btn-info"><i className="fa fa-skype"></i> Skype</a>
                             <a role="button" className="btn btn-success" href="mailto:confusion@food.net"><i className="fa fa-envelope-o"></i> Email</a>
                         </div>
@@ -82,6 +84,7 @@ class Contact extends Component {
                             <Row className="form-group">
                             <Label htmlFor="firstname" md={2}>Fist Name</Label>
                                 <Col md={10}>
+                                {/* eslint-disable-next-line */}
                                     <Control.text model=".firstname" id="firstname" className="form-control" name="firstname" placeholder="First Name" 
                                     validators={{
                                         required, minLength: minLength(3), maxLength: maxLength(15)
@@ -102,6 +105,7 @@ class Contact extends Component {
                             <Row className="form-group">
                                 <Label htmlFor="lastname" md={2}>Last Name</Label>
                                     <Col md={10}>
+                                         {/* eslint-disable-next-line */}
                                         <Control.text model=".lastname" id="lastname" className="form-control" name="lastname" placeholder="Last Name"
                                         validators={{
                                             required, minLength: minLength(3), maxLength: maxLength(15)
@@ -123,6 +127,7 @@ class Contact extends Component {
                             <Row className="form-group">
                                 <Label htmlFor="telnum" md={2}>Contact Tel.</Label>
                                     <Col md={10}>
+                                         {/* eslint-disable-next-line */}
                                         <Control.text model=".telnum" className="form-control" name="telnum" placeholder="Tel. Number"
                                         validators={{
                                             required, minLength: minLength(3), maxLength: maxLength(15), isNumber
@@ -145,6 +150,7 @@ class Contact extends Component {
                             <Row className="form-group">
                                 <Label htmlFor="email" md={2}>Email</Label>
                                     <Col md={10}>
+                                         {/* eslint-disable-next-line */}
                                         <Control.text model=".email" id="email" className="form-control" name="email" placeholder="Email" 
                                         validators={{
                                             required, validEmail
@@ -166,11 +172,13 @@ class Contact extends Component {
                                 <Col md={{size:6, offset: 2}}>
                                     <div className="form-check">
                                         <Label check></Label>
+                                         {/* eslint-disable-next-line */}
                                         <Control.checkbox model=".agree" className="form-check-input" name="agree" />{' '}
                                         <strong>May we contact you</strong>
                                     </div>
                                 </Col>
                                 <Col md={{size:2, offset: 1}}>
+                                     {/* eslint-disable-next-line */}
                                     <Control.select model=".contactType" className="form-control"name="contactType" >
                                         <option>Tel.</option>
                                         <option>Email</option>
@@ -180,6 +188,7 @@ class Contact extends Component {
                             <Row className="form-group">
                                 <Label htmlFor="message" md={2}>Your Feedback</Label>
                                     <Col md={10}>
+                                         {/* eslint-disable-next-line */}
                                         <Control.textarea model=".message" id="message" className="form-control" name="message" rows="12" />
                                     </Col>
                             </Row>

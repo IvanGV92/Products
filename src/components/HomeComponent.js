@@ -1,7 +1,6 @@
 import React from 'react';
 import RenderCard  from './RenderCardComponent';
 
-import { FadeTransform } from 'react-animation-components';
 
 function Home(props){
     return(
@@ -20,7 +19,9 @@ function Home(props){
                             errorMessage={props.promoErrorMessage}/>
                 </div>
                 <div className="col-12 col-md m-1">
-                    <RenderCard item={props.leader}/>
+                    <RenderCard item={props.leader}
+                      isLoading={props.leaderLoading} 
+                      errorMessage={props.leaderErrorMessage}/>
                 </div>
             </div>
         </div>
