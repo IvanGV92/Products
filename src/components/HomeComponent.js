@@ -1,5 +1,6 @@
 import React from 'react';
-import RenderCard  from './RenderCardComponent'; 
+import RenderCard  from './RenderCardComponent';
+import { baseUrl } from '../shared/baseUrl';
 
 function Home(props){
     return(
@@ -13,7 +14,9 @@ function Home(props){
 
                 </div>
                 <div className="col-12 col-md m-1">
-                    <RenderCard item={props.promotion}/>
+                    <RenderCard item={props.promotion}
+                            isLoading={props.promoLoading} 
+                            errorMessage={props.promoErrorMessage}/>
                 </div>
                 <div className="col-12 col-md m-1">
                     <RenderCard item={props.leader}/>
